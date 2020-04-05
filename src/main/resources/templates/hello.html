@@ -4,11 +4,43 @@
     <head>
         <link href="../static/css/helloStyle.css" th:href="@{/css/helloStyle.css}" rel="stylesheet" />
         <title>Hello World!</title>
+       	<style>
+       	    /* Set a style for all buttons */
+            button {
+              background-color: #4CAF50;
+              color: white;
+              padding: 14px 20px;
+              margin: 8px 0;
+              border: none;
+              cursor: pointer;
+              width: 100%;
+            }
+
+            /* Add a hover effect for buttons */
+            button:hover {
+              opacity: 0.8;
+            }
+
+            /* Extra style for the cancel button (red) */
+            .cancelbtn {
+              width: auto;
+              padding: 10px 18px;
+              background-color: #f44336;
+            }
+            .container {
+                margin-left : 25%;
+                margin-right: 25%;
+                margin-top : 10%;
+                padding: 16px;
+            }
+        </style>
     </head>
     <body>
-        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form>
+        <div class="container">
+        <h3 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]! Welcome to your home screen.</h3>
+            <form th:action="@{/logout}" method="post">
+                <button type="submit" value="Sign Out">Sign Out </button>
+            </form>
+        </div>
     </body>
 </html> 

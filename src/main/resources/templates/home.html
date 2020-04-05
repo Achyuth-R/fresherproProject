@@ -2,10 +2,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <head>
         <title>FresherPro Project</title>
+        <style>
+            button {
+              background-color: #4CAF50;
+              color: white;
+              padding: 14px 20px;
+              margin: 8px 0;
+              border: none;
+              cursor: pointer;
+              width: 100%;
+            }
+
+            /* Add a hover effect for buttons */
+            button:hover {
+              opacity: 0.8;
+            }
+
+            /* Extra style for the cancel button (red) */
+            .cancelbtn {
+              width: auto;
+              padding: 10px 18px;
+              background-color: #f44336;
+            }
+            .container {
+                margin-left : 25%;
+                margin-right: 25%;
+                margin-top : 10%;
+                padding: 16px;
+            }
+        </style>
     </head>
     <body>
-        <h1>Welcome!</h1>
-
-        <p>Press <a th:href="@{/hello}"> to </a> Login.</p>
+        <div class="container">
+            <h1>Welcome!</h1>
+            <h3>Press the button to Login.</h3>
+            <a th:href="@{/hello}"><button>Log in </button></a>
+        </div>
     </body>
 </html>
